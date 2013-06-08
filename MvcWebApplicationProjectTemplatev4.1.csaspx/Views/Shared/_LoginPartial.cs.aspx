@@ -1,0 +1,13 @@
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
+<% if (Request.IsAuthenticated) { %>
+    안녕하세요. <%: Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "관리" }) %>!
+    <% using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) { %>
+        <%: Html.AntiForgeryToken() %>
+        <a href="javascript:document.getElementById('logoutForm').submit()">로그오프</a>
+    <% } %>
+<% } else { %>
+    <ul>
+        <li><%: Html.ActionLink("등록", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })%></li>
+        <li><%: Html.ActionLink("로그인", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })%></li>
+    </ul>
+<% } %>
