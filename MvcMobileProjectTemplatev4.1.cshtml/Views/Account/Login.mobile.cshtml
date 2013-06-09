@@ -1,0 +1,46 @@
+﻿@model $safeprojectname$.Models.LoginModel
+
+@{
+    ViewBag.Title = "로그인";
+}
+
+@section Header {
+    @Html.ActionLink("취소", "Index", "Home", null, new { data_icon = "arrow-l", data_rel = "back" })
+    <h1>@ViewBag.Title</h1>
+}
+
+<p>
+    사용자 이름과 암호를 입력하십시오. 계정이 없는 경우 @Html.ActionLink("등록하십시오", "Register").
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">세부 정보</li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.RememberMe)
+            @Html.CheckBoxFor(m => m.RememberMe)
+        </li>
+
+        <li data-role="fieldcontain">
+            <input type="submit" value="로그인" />
+        </li>
+    </ul>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
