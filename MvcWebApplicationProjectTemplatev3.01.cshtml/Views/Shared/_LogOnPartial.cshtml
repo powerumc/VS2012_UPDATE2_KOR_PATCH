@@ -1,7 +1,0 @@
-﻿@if(Request.IsAuthenticated) {
-    <text>환영합니다, <strong>@User.Identity.Name</strong> 님!
-    [ @Html.ActionLink("로그오프", "LogOff", "Account") ]</text>
-}
-else {
-    @:[ @Html.ActionLink("로그온", "LogOn", "Account") ]
-}
