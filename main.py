@@ -2,17 +2,31 @@ import requests
 import progressbar
 import zipfile
 import io
+import tempfile
+import os
 
-if __name__ == '__main__':
+def _GetTempDir():
+    dir = tempfile.mktemp();
+    os.mkdir(dir)
 
+    return dir
+
+
+
+def _DownloadsPatch(dir):
     ISO = "https://github.com/powerumc/VS2012_UPDATE2_KOR_PATCH/archive/master.zip"
-    CHUNK_SIZE = 1024      # 1MB
+    CHUNK_SIZE = 1024 # 1MB
 
     r = requests.get(ISO)
     total_size = int(r.headers['content-length'])
     pbar = progressbar.ProgressBar(maxval=total_size).start()
 
-    f = open('a.zip', 'wb')
+
+
+    filepath = os.path.join(dir, "master.zip");
+    print("Downloading... " + filepath)
+
+    f = open(filepath, 'wb')
 
     file_contents = ""
     for chunk in r.iter_content(chunk_size=CHUNK_SIZE):
@@ -22,26 +36,34 @@ if __name__ == '__main__':
 
     f.close()
 
-    zip = zipfile.ZipFile("a.zip", "r")
-    zip.extractall(".")
+    return filepath
 
+def _Unzip(filepath):
+    print("Extract unzipping...")
+    dir = os.path.splitext(filepath)[0]
+    zip = zipfile.ZipFile(filepath, "r")
+    zip.extractall( dir )
 
+    return os.path.join(dir, "master", "VS2012_UPDATE2_KOR_PATCH-master")
 
+if __name__ == '__main__':
 
+    #print(platform.processor() == True )
 
+    #reg = _winreg.ConnectRegistry(None, HKEY_LOCAL_MACHINE)
 
+    #key = _winreg.OpenKey(reg, "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\11.0\InstallDir")
+    #print(key);
 
+    #files = ['http://docs.python-requests.org/en/latest/index.html', 'https://github.com/powerumc/VS2012_UPDATE2_KOR_PATCH/blob/master/BasicMvcWebApplicationProjectTemplatev4.1.csaspx.zip']
+    #CHUNK_SIZE = 1024 * 1024 # 1MB
 
+    tempdir = _GetTempDir()
 
+    filepath = _DownloadsPatch(tempdir)
 
-#print(platform.processor() == True )
+    unzipdir = _Unzip(filepath)
 
-#reg = _winreg.ConnectRegistry(None, HKEY_LOCAL_MACHINE)
+    print(os.listdir(unzipdir))
 
-#key = _winreg.OpenKey(reg, "SOFTWARE\Wow6432Node\Microsoft\VisualStudio\11.0\InstallDir")
-#print(key);
-
-#files = ['http://docs.python-requests.org/en/latest/index.html', 'https://github.com/powerumc/VS2012_UPDATE2_KOR_PATCH/blob/master/BasicMvcWebApplicationProjectTemplatev4.1.csaspx.zip']
-#CHUNK_SIZE = 1024 * 1024 # 1MB
-
-
+    input()
