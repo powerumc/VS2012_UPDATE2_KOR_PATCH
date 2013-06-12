@@ -13,5 +13,5 @@ Visual Studio 2012 Update 2를 설치 후 ASP.NET MVC 4 프로젝트 템플릿�
 
 ## 설치 방법
 
-1. ZIP 파일을 다운로드 받는다.
+1. ZIP 파일을 다운로드 받는다. [다운로드 링크](https://github.com/powerumc/VS2012_UPDATE2_KOR_PATCH/archive/master.zip)
 2. C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\ProjectTemplates\CSharp\Web\1042 경로로 복사
