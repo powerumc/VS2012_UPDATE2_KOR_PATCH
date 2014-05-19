@@ -1,65 +1,27 @@
-What's Markdown ToC
-=====================
+# VISUAL STUDIO 2012 UPDATE 2 한국어 패치
 
-Markdown ToC is a composition library to render the **Markdown Flavored Syntax** and Create the **ToC(Table of Contents)** automatically.
-You're only markdown file, such as readme.md file.
+## 업데이트 대상
 
-# Method 1. Local Repository
+Visual Studio 2012 Update 2를 설치 후 ASP.NET MVC 4 프로젝트 템플릿이 영문으로 바뀌는 현상이 발생
 
-1. You can download a zip file at [this link](https://github.com/powerumc/markdown-toc/archive/master.zip).
-2. And unzip a zipfile.
-3. You have to modify a README.md file what contents do you want.
-4. Upload your repository or git commit and push.
+## 한국어 패치가 필요한 대상
 
-# Method 2. GitHub gh-pages branch.
+한 명 이상의 팀원과 공동 작업을 할 경우 영문/한글 주석을 충돌로 인식하는 문제가 발생할 수 있다.
 
-Github gh-pages branch can host web page on github.com.
+1. ASP.NET MVC 4 로 프로젝트를 만든 경우
+2. 한 명 이상의 팀원과 소스 제어(Source Control)에 체크인 해야 하는 경우
 
-## 1. Add remote repository the Markdown-ToC
+## 설치 방법
 
-```
-$ git remote add markdown-toc git@github.com:powerumc/markdown-toc.git            # by ssh
-
-$ git remote add markdown-toc https://github.com/powerumc/markdown-toc.git        # by https
-
-```
-
-## 2. Ready in your repository
-
-You should be  new branch is gh-pages without parent branch(--orphan).
-And remove all repository files.
-
-```
-$ git checkout --orphan gh-pages
-
-$ git rm -rf .
-
-$ git commit -am "remove all file for gh-pages"
-
-$ git pull markdown-toc master:gh-pages
-
-```
-
-## 3. Modify your README.md
-
-All right. Modify your contents in README.md, commit a README.md.
-
-```
-$ git commit -am "init commit."
-```
-
-If you want to get it what is README.md from another branch.
-
-```
-$ git checkout master -- README.md
-
-$ git commit
-```
+1. ZIP 파일을 다운로드 받는다. [다운로드 링크](https://github.com/powerumc/VS2012_UPDATE2_KOR_PATCH/archive/master.zip)
+2. 다운로드 받은 ZIP 파일 압축을 푼다.
+3. CD VS2012\_UPDATE2\_KOR_PATCH-master 를 입력하여 압축 푼 폴더로 이동한다.
+4. CD dist  폴더로 이동한다.
+5. vs2012u2_patch.exe 를 실행한다.
 
 
-## 4. Push these
+## 지원 문의
 
-```
-$ git push origin gh-pages
-```
-
+- 대표사이트 : http://powerumc.kr
+- 블로그 : http://blog.powerumc.kr
+- 커뮤니티 : http://devwith.com
