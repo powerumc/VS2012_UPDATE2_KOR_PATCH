@@ -1,3 +1,6 @@
+Junil Um  
+http://blog.powerumc.kr
+
 # VISUAL STUDIO 2012 UPDATE 2 한국어 패치
 
 ## 업데이트 대상
