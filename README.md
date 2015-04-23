@@ -22,9 +22,24 @@ Visual Studio 2012 Update 2를 설치 후 ASP.NET MVC 4 프로젝트 템플릿�
 4. CD dist  폴더로 이동한다.
 5. vs2012u2_patch.exe 를 실행한다.
 
+'''
+vs2012u2_patch.exe 를 실행한다.
+
+Downloading… c:usersumcappdatalocaltemptmprqavidmaster.zip
+99% |####################################################################### |
+
+Extract unzipping… c:usersumcappdatalocaltemptmprqavidmaster
+unzipdir = c:usersumcappdatalocaltemptmprqavidmasterVS2012_UPDATE2_KOR_PATCH-master
+Install… c:usersumcappdatalocaltemptmprqavidmasterVS2012_UPDATE2_KOR_PATCH-master
+BasicMvcWebApplicationProjectTemplatev4.1.csaspx Install… c:usersumcappdatalocaltemptmprqavidmaster
+VS2012_UPDATE2_KOR_PATCH-master
+
+…. 생략 ….
+
+Complated Installation VS2012 Update 2 Korean Patch
+'''
 
 ## 지원 문의
 
 - 대표사이트 : http://powerumc.kr
 - 블로그 : http://blog.powerumc.kr
-- 커뮤니티 : http://devwith.com
