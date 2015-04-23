@@ -23,7 +23,7 @@ Visual Studio 2012 Update 2를 설치 후 ASP.NET MVC 4 프로젝트 템플릿�
 5. vs2012u2_patch.exe 를 실행한다.
 
 ```
-vs2012u2_patch.exe 를 실행한다.
+> vs2012u2_patch.exe
 
 Downloading… c:usersumcappdatalocaltemptmprqavidmaster.zip
 99% |####################################################################### |
