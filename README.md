@@ -43,4 +43,3 @@ Complated Installation VS2012 Update 2 Korean Patch
 
 - 대표사이트 : http://powerumc.kr
 - 블로그 : http://blog.powerumc.kr
-- 커뮤니티 : http://devwith.com
